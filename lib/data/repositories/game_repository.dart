@@ -57,7 +57,9 @@ class GameRepository {
         .limit(6)
         .get();
     return querySnapshot.docs
-        .map<ScoreInfo>((doc) => ScoreInfo.fromJson(doc.data()))
+        .map<ScoreInfo>(
+          (doc) => ScoreInfo.fromJson(doc.data()),
+        )
         .toList();
   }
 }

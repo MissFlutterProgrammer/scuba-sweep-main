@@ -8,12 +8,13 @@ void main() {
     env: "prod",
     name: "scuba_sweep",
     values: FlavorValues(
-        bundleID: 'io.qedcode.scubasweep',
-        appID: '',
-        baseUrl: '',
-        apiUrl: '',
-        sentryUrl: '',
-        dynamicLinkUrl: ''),
+      bundleID: 'io.qedcode.scubasweep',
+      appID: '',
+      baseUrl: '',
+      apiUrl: '',
+      sentryUrl: '',
+      dynamicLinkUrl: '',
+    ),
   );
 
   mainCommon(DefaultFirebaseOptions.currentPlatform);

@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
@@ -106,7 +105,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           width: double.infinity,
                           child: ActionButton(
                             title: "NEXT",
-                            onPressed: () => (state.isLoading || nicknameController.text.isEmpty)
+                            onPressed: () => (state.isLoading ||
+                                    nicknameController.text.isEmpty)
                                 ? null
                                 : ref
                                     .read(signInProvider.notifier)

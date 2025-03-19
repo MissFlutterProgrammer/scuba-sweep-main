@@ -32,7 +32,8 @@ class GamePage extends ConsumerWidget {
         EnvMessageOverlay.id: (_, MyGame game) => EnvMessageOverlay(game),
         LeaderBoardOverlay.id: (_, MyGame game) => LeaderBoardOverlay(game),
         InstructionsOverlay.id: (_, MyGame game) => InstructionsOverlay(game),
-        BoosterProgressOverlay.id: (_, MyGame game) => BoosterProgressOverlay(game),
+        BoosterProgressOverlay.id: (_, MyGame game) =>
+            BoosterProgressOverlay(game),
       },
       initialActiveOverlays: const [MainMenu.id],
     );

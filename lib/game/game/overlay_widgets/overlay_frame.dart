@@ -1,10 +1,13 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:scuba_sweep/game/helper/colors.dart';
 
 class OverlayFrame extends StatelessWidget {
-  const OverlayFrame({super.key, required this.child, this.bottomWidget});
+  const OverlayFrame({
+    super.key,
+    required this.child,
+    this.bottomWidget,
+  });
   final Widget child;
   final Widget? bottomWidget;
 
@@ -20,9 +23,13 @@ class OverlayFrame extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
                 decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.primaryLight, width: 3),
-                    color: AppColors.cardColor.withAlpha(180),
-                    borderRadius: BorderRadius.circular(20)),
+                  border: Border.all(
+                    color: AppColors.primaryLight,
+                    width: 3,
+                  ),
+                  color: AppColors.cardColor.withAlpha(180),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Padding(
@@ -35,7 +42,7 @@ class OverlayFrame extends StatelessWidget {
             ),
             if (bottomWidget != null)
               Padding(
-                padding: const EdgeInsets.only(top: 20.0),
+                padding: const EdgeInsets.only(top: 20),
                 child: bottomWidget!,
               ),
           ],

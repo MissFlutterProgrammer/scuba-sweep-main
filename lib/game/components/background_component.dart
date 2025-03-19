@@ -26,8 +26,8 @@ class MyParallaxComponent extends Component with HasGameRef<MyGame> {
   }
 
   updateSpeed(SpeedMode gameSpeed) {
-    _parallaxComponent?.parallax!.baseVelocity = Vector2(
-        0, -15 - (gameSpeed == SpeedMode.slow ? 0 : gameSpeed.speed / 100 + 12));
+    _parallaxComponent?.parallax!.baseVelocity = Vector2(0,
+        -15 - (gameSpeed == SpeedMode.slow ? 0 : gameSpeed.speed / 100 + 12));
   }
 
   reset() {

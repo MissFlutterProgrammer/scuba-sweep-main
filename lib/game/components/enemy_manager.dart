@@ -1,11 +1,9 @@
 import 'dart:math';
-
 import 'package:flame/components.dart';
 import 'package:scuba_sweep/game/components/enemy_component.dart';
 import 'package:scuba_sweep/game/game/my_game.dart';
 import 'package:scuba_sweep/game/helper/enums.dart';
 import 'dart:async' as da;
-
 import 'package:uuid/uuid.dart';
 
 class EnemyManager extends Component with HasGameRef<MyGame> {
@@ -26,7 +24,10 @@ class EnemyManager extends Component with HasGameRef<MyGame> {
   }
 
   start() {
-    timer = da.Timer.periodic(const Duration(milliseconds: 2300), (_) => addEnemy());
+    timer = da.Timer.periodic(
+      const Duration(milliseconds: 2300),
+      (_) => addEnemy(),
+    );
   }
 
   addEnemy() async {

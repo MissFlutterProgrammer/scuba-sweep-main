@@ -10,7 +10,7 @@ class ScoreInfo {
   ScoreInfo({
     this.nickname,
     this.score = 0,
-});
+  });
 
   factory ScoreInfo.fromJson(Map<String, dynamic> json) =>
       _$ScoreInfoFromJson(json);

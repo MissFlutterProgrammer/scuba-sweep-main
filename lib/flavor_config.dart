@@ -9,14 +9,15 @@ class FlavorValues {
   final String? sentryUrl;
   final String? dynamicLinkUrl;
 
-  FlavorValues(
-      {this.bundleID,
-      this.appID,
-      this.baseUrl,
-      this.apiUrl,
-      this.notifUrl,
-      this.sentryUrl,
-      this.dynamicLinkUrl});
+  FlavorValues({
+    this.bundleID,
+    this.appID,
+    this.baseUrl,
+    this.apiUrl,
+    this.notifUrl,
+    this.sentryUrl,
+    this.dynamicLinkUrl,
+  });
 }
 
 class FlavorConfig {

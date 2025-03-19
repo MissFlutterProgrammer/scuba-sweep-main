@@ -26,25 +26,26 @@ class ScoresTable extends StatelessWidget {
               (e) => Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Row(
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: getRankColor(scoreList.indexOf(e) + 1),
-                              border: Border.all(
-                                color: AppColors.white,
-                                width: 2,
-                              ),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: AppColors.primary,
-                                  blurRadius: 5,
-                                )
-                              ]),
+                            shape: BoxShape.circle,
+                            color: getRankColor(scoreList.indexOf(e) + 1),
+                            border: Border.all(
+                              color: AppColors.white,
+                              width: 2,
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: AppColors.primary,
+                                blurRadius: 5,
+                              )
+                            ],
+                          ),
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(10),
                             child: Text(
                               '${scoreList.indexOf(e) + 1}',
                               style: const TextStyle(
@@ -59,17 +60,21 @@ class ScoresTable extends StatelessWidget {
                         Text(
                           '${e.nickname == '' ? 'player' : e.nickname}:',
                           style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontFamily: 'LilitaOne'),
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontFamily: 'LilitaOne',
+                          ),
                         ),
-                        Expanded(child: Container()),
+                        Expanded(
+                          child: Container(),
+                        ),
                         Text(
                           e.score.toString(),
                           style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontFamily: 'LilitaOne'),
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontFamily: 'LilitaOne',
+                          ),
                         ),
                       ],
                     ),

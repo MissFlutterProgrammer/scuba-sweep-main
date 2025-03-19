@@ -1,6 +1,5 @@
 import 'dart:async' as da;
 import 'dart:math';
-
 import 'package:flame/components.dart';
 import 'package:scuba_sweep/game/components/trash_component.dart';
 import 'package:scuba_sweep/game/game/my_game.dart';
@@ -21,11 +20,16 @@ class TrashManager extends Component with HasGameRef<MyGame> {
   @override
   void update(double dt) {
     super.update(dt);
-    trashList.removeWhere((trash) => trash.position.y > gameRef.size.y);
+    trashList.removeWhere(
+      (trash) => trash.position.y > gameRef.size.y,
+    );
   }
 
   start() {
-    timer = da.Timer.periodic(const Duration(milliseconds: 1200), (_) => addTrash());
+    timer = da.Timer.periodic(
+      const Duration(milliseconds: 1200),
+      (_) => addTrash(),
+    );
   }
 
   void addTrash() async {

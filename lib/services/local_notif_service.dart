@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
@@ -48,8 +47,8 @@ class NotificationService {
       requestAlertPermission: true,
       requestBadgePermission: true,
       requestSoundPermission: true,
-      onDidReceiveLocalNotification:
-          (int id, String? title, String? body, String? payload) async {},
+      // onDidReceiveLocalNotification:
+      //     (int id, String? title, String? body, String? payload) async {},
     );
 
     final InitializationSettings initializationSettings =
@@ -119,7 +118,12 @@ class NotificationService {
             ticker: 'ticker');
     const NotificationDetails notificationDetails =
         NotificationDetails(android: androidNotificationDetails);
-    await flutterLocalNotificationsPlugin
-        .show(123, title, body, notificationDetails, payload: link ?? 'item x');
+    await flutterLocalNotificationsPlugin.show(
+      123,
+      title,
+      body,
+      notificationDetails,
+      payload: link ?? 'item x',
+    );
   }
 }

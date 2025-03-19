@@ -41,7 +41,10 @@ class ActionButton extends StatelessWidget {
                 ? const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [AppColors.buttonTop, AppColors.buttonBottom],
+                    colors: [
+                      AppColors.buttonTop,
+                      AppColors.buttonBottom,
+                    ],
                   )
                 : null,
           ),

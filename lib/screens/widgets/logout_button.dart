@@ -29,15 +29,16 @@ class LogoutButton extends ConsumerWidget {
           ),
         ),
         TextButton(
-            onPressed: () => ref.read(signInProvider.notifier).signOut(),
-            child: const Text(
-              'logout',
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 18,
-                fontFamily: "LilitaOne",
-              ),
-            ).tr()),
+          onPressed: () => ref.read(signInProvider.notifier).signOut(),
+          child: const Text(
+            'logout',
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: 18,
+              fontFamily: "LilitaOne",
+            ),
+          ).tr(),
+        ),
       ],
     );
   }

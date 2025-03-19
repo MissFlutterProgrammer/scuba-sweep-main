@@ -1,8 +1,6 @@
 import 'dart:developer';
-
 import './local_notif_service.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {

@@ -10,7 +10,7 @@ class TrashComponent extends SpriteComponent with HasGameRef<MyGame> {
     required Sprite sprite,
     required positionX,
   }) : super(
-          size: Vector2.all(60.0),
+          size: Vector2.all(60),
           position: Vector2(positionX, 0),
           sprite: sprite,
           anchor: Anchor.center,

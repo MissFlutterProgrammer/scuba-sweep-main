@@ -55,7 +55,7 @@ class _GameHeaderState extends ConsumerState<GameHeader>
     final currentScore = ref.watch(scoreNotifierProvider).score;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
       child: Align(
         alignment: Alignment.topCenter,
         child: Row(
@@ -70,7 +70,9 @@ class _GameHeaderState extends ConsumerState<GameHeader>
                 const SizedBox(width: 5),
                 Text(
                   currentScore.toString(),
-                  style: subtitleStyle.copyWith(fontSize: _controller.value),
+                  style: subtitleStyle.copyWith(
+                    fontSize: _controller.value,
+                  ),
                 )
               ],
             ),

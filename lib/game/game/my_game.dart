@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:math';
-
 import 'package:flame/components.dart' as cp;
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
@@ -118,9 +117,10 @@ class MyGame extends FlameGame {
       audioManager.stopBgmMusic();
       audioManager.play('crash.wav');
       addEffect(
-          effect: AnimationEffect.crash,
-          position: crashPosition(enemies[index].position),
-          size: Vector2.all(250));
+        effect: AnimationEffect.crash,
+        position: crashPosition(enemies[index].position),
+        size: Vector2.all(250),
+      );
       player.isDead = true;
       Future.delayed(const Duration(milliseconds: 600), () {
         gameOver();

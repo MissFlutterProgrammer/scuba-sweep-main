@@ -16,7 +16,7 @@ class EnemyComponent extends SpriteComponent with HasGameRef<MyGame> {
     required this.positionX,
     required this.enemy,
   }) : super(
-          size: Vector2.all(100.0),
+          size: Vector2.all(100),
           sprite: sprite,
           anchor: Anchor.center,
         );
@@ -49,7 +49,9 @@ class EnemyComponent extends SpriteComponent with HasGameRef<MyGame> {
     switch (enemy) {
       case Enemy.jellyfish:
         return Rect.fromCircle(
-            center: Offset(position.x, position.y - 10), radius: size.x * 0.45);
+          center: Offset(position.x, position.y - 10),
+          radius: size.x * 0.45,
+        );
       case Enemy.shark:
         return Rect.fromLTRB(
             position.x - size.x * 0.3,
@@ -58,10 +60,9 @@ class EnemyComponent extends SpriteComponent with HasGameRef<MyGame> {
             position.y + size.y * 0.25);
       case Enemy.pufferfish:
         return Rect.fromCircle(
-            center: Offset(position.x - size.x * 0.04, position.y),
-            radius: size.x * 0.35);
-      default:
-        return Rect.fromLTWH(position.x, position.y, size.x, size.y);
+          center: Offset(position.x - size.x * 0.04, position.y),
+          radius: size.x * 0.35,
+        );
     }
   }
 

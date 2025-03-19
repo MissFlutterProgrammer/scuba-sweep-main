@@ -17,34 +17,30 @@ class PauseMenu extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return OverlayFrame(
-        child: SizedBox(
-      width: MediaQuery.of(context).size.width - 40,
-      child: Center(
-        child: Column(
-          children: [
-            Text(
-              'game_paused',
-              style: titleTextStyle,
-            ).tr(),
-            const SizedBox(
-              height: 60,
-            ),
-            SoundToggle(game
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            ActionButton(
-              title: 'resume',
-              onPressed: () {
-                game.resumeEngine();
-              },
-            ),
-            const SizedBox(height: 20),
-            const LogoutButton()
-          ],
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width - 40,
+        child: Center(
+          child: Column(
+            children: [
+              Text(
+                'game_paused',
+                style: titleTextStyle,
+              ).tr(),
+              const SizedBox(height: 60),
+              SoundToggle(game),
+              const SizedBox(height: 60),
+              ActionButton(
+                title: 'resume',
+                onPressed: () {
+                  game.resumeEngine();
+                },
+              ),
+              const SizedBox(height: 20),
+              const LogoutButton()
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }

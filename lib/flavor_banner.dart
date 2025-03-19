@@ -12,16 +12,19 @@ class FlavorBanner extends StatelessWidget {
     if (FlavorConfig.isProduction()) return child;
     bannerConfig = _getDefaultBanner();
     return Stack(
-      children: <Widget>[child, _buildBanner(context)],
+      children: <Widget>[
+        child,
+        _buildBanner(context),
+      ],
     );
   }
 
   BannerConfig _getDefaultBanner() {
     return BannerConfig(
-        bannerName: FlavorConfig.instance!.env.toString(),
-        bannerColor: FlavorConfig.isDevelopment()
-            ? Colors.green
-            : const Color(0xffFFDE00));
+      bannerName: FlavorConfig.instance!.env.toString(),
+      bannerColor:
+          FlavorConfig.isDevelopment() ? Colors.green : const Color(0xffFFDE00),
+    );
   }
 
   Widget _buildBanner(BuildContext context) {
@@ -30,11 +33,12 @@ class FlavorBanner extends StatelessWidget {
       height: 50,
       child: CustomPaint(
         painter: BannerPainter(
-            message: bannerConfig.bannerName,
-            textDirection: Directionality.of(context),
-            layoutDirection: Directionality.of(context),
-            location: BannerLocation.topStart,
-            color: bannerConfig.bannerColor),
+          message: bannerConfig.bannerName,
+          textDirection: Directionality.of(context),
+          layoutDirection: Directionality.of(context),
+          location: BannerLocation.topStart,
+          color: bannerConfig.bannerColor,
+        ),
       ),
     );
   }
@@ -43,5 +47,8 @@ class FlavorBanner extends StatelessWidget {
 class BannerConfig {
   final String bannerName;
   final Color bannerColor;
-  BannerConfig({required this.bannerName, required this.bannerColor});
+  BannerConfig({
+    required this.bannerName,
+    required this.bannerColor,
+  });
 }

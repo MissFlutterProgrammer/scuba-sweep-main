@@ -5,7 +5,6 @@ enum GameState {
   paused,
 }
 
-
 enum AnimationEffect {
   splash(
     effectName: 'splash',

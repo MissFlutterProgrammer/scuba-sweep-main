@@ -1,6 +1,5 @@
 import 'dart:async' as da;
 import 'dart:core';
-
 import 'package:flame/components.dart';
 import 'package:scuba_sweep/game/components/booster_component.dart';
 import 'package:scuba_sweep/game/game/my_game.dart';

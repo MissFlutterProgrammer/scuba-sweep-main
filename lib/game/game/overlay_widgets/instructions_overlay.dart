@@ -47,7 +47,7 @@ class InstructionsOverlay extends StatelessWidget {
                     height: 40,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 40.0),
+                    padding: const EdgeInsets.only(top: 40),
                     child: SvgPicture.asset(
                       'assets/images/hand.svg',
                       height: 40,
@@ -64,10 +64,12 @@ class InstructionsOverlay extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: Enemy.values
-                  .map((e) => Image.asset(
-                        'assets/images/${e.imagePath}',
-                        height: 65,
-                      ))
+                  .map(
+                    (e) => Image.asset(
+                      'assets/images/${e.imagePath}',
+                      height: 65,
+                    ),
+                  )
                   .toList(),
             ),
             const SizedBox(height: 30),
@@ -76,7 +78,7 @@ class InstructionsOverlay extends StatelessWidget {
               style: titleTextStyle.copyWith(fontSize: 24),
             ).tr(),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20),
               child: Image.asset(
                 'assets/images/pearl.png',
                 width: 70,

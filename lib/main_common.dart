@@ -1,4 +1,3 @@
-
 import 'package:dart_openai/dart_openai.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ import 'package:scuba_sweep/data/providers/theme_provider.dart';
 import 'package:scuba_sweep/utilities/router.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:scuba_sweep/utilities/theme.dart';
-
 import 'data/envied/env.dart';
 
 void mainCommon(options) async {
@@ -38,14 +36,19 @@ void mainCommon(options) async {
   final container = ProviderContainer();
 
   await container.read(authStateChangesProvider.future);
-  runApp(EasyLocalization(
+  runApp(
+    EasyLocalization(
       supportedLocales: const [
         Locale('en'),
       ],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
       child: UncontrolledProviderScope(
-          container: container, child: const ScubaSweep())));
+        container: container,
+        child: const ScubaSweep(),
+      ),
+    ),
+  );
 }
 
 void configLoading() {}
@@ -90,8 +93,9 @@ class ScubaSweepState extends ConsumerState<ScubaSweep> {
         return MediaQuery(
           // Set the default textScaleFactor to 1.0 for
           // the whole subtree.
-          data:
-              mediaQueryData.copyWith(textScaler: const TextScaler.linear(1.0)),
+          data: mediaQueryData.copyWith(
+            textScaler: const TextScaler.linear(1.0),
+          ),
           child: child!,
         );
       }),

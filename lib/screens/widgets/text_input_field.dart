@@ -17,7 +17,7 @@ class TextInputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 5.0, left: 5),
+          padding: const EdgeInsets.only(bottom: 5, left: 5),
           child: const Text(
             "login.choose",
             style: TextStyle(
@@ -32,14 +32,17 @@ class TextInputField extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextField(
               controller: controller,
-              inputFormatters: [LengthLimitingTextInputFormatter(16)],
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(16),
+              ],
               style: const TextStyle(
-                  color: AppColors.primary,
-                  fontFamily: 'LilitaOne',
-                  fontSize: 20),
+                color: AppColors.primary,
+                fontFamily: 'LilitaOne',
+                fontSize: 20,
+              ),
               decoration: InputDecoration(
                 border: InputBorder.none,
                 focusColor: AppColors.primary,

@@ -18,31 +18,34 @@ class LeaderBoardOverlay extends ConsumerWidget {
     final state = ref.watch(scoreNotifierProvider);
 
     return OverlayFrame(
-        child: SizedBox(
-      width: MediaQuery.of(context).size.width - 80,
-      child: Column(
-        children: [
-          Text(
-            'leaderboard',
-            style: titleTextStyle,
-          ).tr(),
-          const SizedBox(height: 40),
-          state.isLoading
-              ? const Center(child: CircularProgressIndicator())
-              : ScoresTable(state.topHighScores),
-          const SizedBox(height: 20),
-          TextButton(
-            onPressed: () {
-              game.overlays.remove(LeaderBoardOverlay.id);
-              game.overlays.add(GameOverMenu.id);
-            },
-            child: Text(
-              'back',
-              style: exitTextstyle,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width - 80,
+        child: Column(
+          children: [
+            Text(
+              'leaderboard',
+              style: titleTextStyle,
             ).tr(),
-          ),
-        ],
+            const SizedBox(height: 40),
+            state.isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ScoresTable(state.topHighScores),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                game.overlays.remove(LeaderBoardOverlay.id);
+                game.overlays.add(GameOverMenu.id);
+              },
+              child: Text(
+                'back',
+                style: exitTextstyle,
+              ).tr(),
+            ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

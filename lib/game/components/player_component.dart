@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/sprite.dart';
@@ -26,7 +25,7 @@ class PlayerComponent extends SpriteAnimationComponent
 
   PlayerComponent()
       : super(
-          size: Vector2.all(120.0),
+          size: Vector2.all(120),
           anchor: Anchor.center,
         );
 
@@ -163,13 +162,20 @@ class PlayerComponent extends SpriteAnimationComponent
         row: 0, stepTime: _animationSpeed / 6, to: 16, loop: false);
 
     final leftTransitionSpriteSheet = SpriteSheet(
-        image: await gameRef.images.load('tr_left.png'),
-        srcSize: Vector2(384, 384));
+      image: await gameRef.images.load('tr_left.png'),
+      srcSize: Vector2(384, 384),
+    );
 
     _leftTransitionAnimation = leftTransitionSpriteSheet.createAnimation(
-        row: 0, stepTime: _animationSpeed / 6, to: 16, loop: false);
+      row: 0,
+      stepTime: _animationSpeed / 6,
+      to: 16,
+      loop: false,
+    );
   }
 
   Rect getPlayerRect() => Rect.fromCircle(
-      center: Offset(position.x, position.y - 10), radius: size.x * 0.2);
+        center: Offset(position.x, position.y - 10),
+        radius: size.x * 0.2,
+      );
 }

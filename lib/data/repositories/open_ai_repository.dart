@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:dart_openai/dart_openai.dart';
 
 class OpenAiRepository {

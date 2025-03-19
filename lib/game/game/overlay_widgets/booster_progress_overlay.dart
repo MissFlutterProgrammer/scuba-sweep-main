@@ -55,7 +55,10 @@ class _BoosterProgressOverlayState extends ConsumerState<BoosterProgressOverlay>
               height: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.white, width: 2),
+                border: Border.all(
+                  color: Colors.white,
+                  width: 2,
+                ),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
@@ -67,9 +70,10 @@ class _BoosterProgressOverlayState extends ConsumerState<BoosterProgressOverlay>
                     backgroundColor:
                         const Color.fromARGB(255, 62, 74, 128).withAlpha(80),
                     valueColor: AlwaysStoppedAnimation<Color>(
-                        _animation.value < 0.2
-                            ? Colors.red
-                            : const Color.fromARGB(255, 92, 182, 255)),
+                      _animation.value < 0.2
+                          ? Colors.red
+                          : const Color.fromARGB(255, 92, 182, 255),
+                    ),
                   ),
                 ),
               ),

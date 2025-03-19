@@ -1,9 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:dio/dio.dart';
-
 import '../flavor_config.dart';
 
 class HTTPService {
@@ -53,15 +51,17 @@ class HTTPService {
       if (data != null) {
         qData.addAll(data);
       }
-      return await dio.get(url,
-          queryParameters: qData,
-          options: Options(
-              headers: await _setHeaders(headers: headers),
-              followRedirects: false,
-              receiveTimeout: const Duration(seconds: 10),
-              validateStatus: (status) {
-                return status! < 500 && status != 404;
-              }));
+      return await dio.get(
+        url,
+        queryParameters: qData,
+        options: Options(
+            headers: await _setHeaders(headers: headers),
+            followRedirects: false,
+            receiveTimeout: const Duration(seconds: 10),
+            validateStatus: (status) {
+              return status! < 500 && status != 404;
+            }),
+      );
     } on DioException catch (e) {
       log('Unable to perform get request.');
       log('DioException:$e');
@@ -82,14 +82,16 @@ class HTTPService {
         qData.addAll(data);
       }
 
-      return await dio.post(url,
-          data: jsonEncode(qData),
-          options: Options(
-              headers: await _setHeaders(),
-              followRedirects: false,
-              validateStatus: (status) {
-                return status! < 500;
-              }));
+      return await dio.post(
+        url,
+        data: jsonEncode(qData),
+        options: Options(
+            headers: await _setHeaders(),
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 500;
+            }),
+      );
     } on DioException catch (e) {
       log('Unable to perform post request: ${e.error}');
       log('DioException: ${e.response}');
@@ -109,14 +111,16 @@ class HTTPService {
         qData.addAll(data);
       }
 
-      return await dio.put(url,
-          data: jsonEncode(qData),
-          options: Options(
-              headers: await _setHeaders(),
-              followRedirects: false,
-              validateStatus: (status) {
-                return status! < 500;
-              }));
+      return await dio.put(
+        url,
+        data: jsonEncode(qData),
+        options: Options(
+            headers: await _setHeaders(),
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 500;
+            }),
+      );
     } on DioException catch (e) {
       log('Unable to perform post request: ${e.error}');
       log('DioException: ${e.response}');
@@ -140,14 +144,16 @@ class HTTPService {
 
       final formData = FormData.fromMap(qData);
 
-      return await dio.post(url,
-          data: formData,
-          options: Options(
-              headers: await _setHeaders(),
-              followRedirects: false,
-              validateStatus: (status) {
-                return status! < 500;
-              }));
+      return await dio.post(
+        url,
+        data: formData,
+        options: Options(
+            headers: await _setHeaders(),
+            followRedirects: false,
+            validateStatus: (status) {
+              return status! < 500;
+            }),
+      );
     } on DioException catch (e) {
       log('Unable to perform post request: ${e.error}');
       log('DioException: ${e.response}');
@@ -167,15 +173,17 @@ class HTTPService {
         qData.addAll(data);
       }
 
-      return await dio.delete(url,
-          data: jsonEncode(data),
-          options: Options(
-            headers: await _setHeaders(),
-            followRedirects: false,
-            validateStatus: (status) {
-              return status! < 500;
-            },
-          ));
+      return await dio.delete(
+        url,
+        data: jsonEncode(data),
+        options: Options(
+          headers: await _setHeaders(),
+          followRedirects: false,
+          validateStatus: (status) {
+            return status! < 500;
+          },
+        ),
+      );
     } on DioException catch (e) {
       log('Unable to perform post request: ${e.error}');
       log('DioException: ${e.response}');
